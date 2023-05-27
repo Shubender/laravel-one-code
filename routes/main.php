@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Posts\CommentController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TestController;
+use App\Http\Middleware\LogMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
+Route::get('/test', TestController::class);
+
 Route::view('/', 'welcome')->name('home');
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
@@ -37,5 +40,3 @@ Route::post('blog/{post}/like', [BlogController::class, 'like'])->name('blog.lik
 Route::resource('posts/{post}/comments', CommentController::class);
 
 //Route::redirect('/test', '/', 302);
-
-//Route::get('/controller', TestController::class);
