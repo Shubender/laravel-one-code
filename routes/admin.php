@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('admin')->middleware(['auth', 'active'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'active', 'admin'])->group(function () {
     Route::redirect('/', 'admin/posts')->name('admin');
     Route::get('posts', [PostController::class, 'index'])->name('admin.posts');
     Route::get('posts/create', [PostController::class, 'create'])->name('admin.posts.create');
