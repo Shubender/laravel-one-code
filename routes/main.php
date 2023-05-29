@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/test', TestController::class)->middleware('token');
 
-Route::view('/', 'welcome')->name('home');
+Route::view('/', 'home.index')->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisterController::class, 'index'])->name('register');
