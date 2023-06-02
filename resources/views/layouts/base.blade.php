@@ -10,7 +10,7 @@
     <style>.container { max-width: 720px; }</style>
 </head>
 <body>
-<div class="d-flex flex-column justify-content-between min-vh-100 text-center">
+<div class="d-flex flex-column justify-content-between min-vh-100">
     @include('includes.header')
     <main class="flex-grow-1 py-1">
         @yield('content')
