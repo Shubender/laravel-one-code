@@ -8,6 +8,11 @@
             <x-card-title>
                 {{ __('Регистарция') }}
             </x-card-title>
+            <x-slot name="right">
+                <a href="{{ route('login') }}">
+                    {{ __('Login') }}
+                </a>
+            </x-slot>
         </x-card-header>
         <x-card-body>
             <x-form action="{{ route('register.store') }}" method="POST">
