@@ -11,7 +11,6 @@
         </x-card-header>
         <x-card-body>
             <x-form action="{{ route('login.store') }}" method="POST">
-                @csrf
                 <x-form-item>
                     <x-label required>{{ __('Email') }}</x-label>
                     <x-input type="email" name="email" class="form-control" autofocus required/>

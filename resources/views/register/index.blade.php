@@ -11,7 +11,6 @@
         </x-card-header>
         <x-card-body>
             <x-form action="{{ route('register.store') }}" method="POST">
-                @csrf
                 <x-form-item>
                     <x-label required>{{ __('Name') }}</x-label>
                     <x-input type="text" name="name" class="form-control" autofocus required/>
