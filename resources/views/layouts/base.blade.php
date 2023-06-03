@@ -7,7 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('page.title', 'Main Page')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css">
-    <style>.container { max-width: 720px; }</style>
+    <style>
+        .container {
+            max-width: 720px;
+        }
+
+        .required:after {
+            content: '*';
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <div class="d-flex flex-column justify-content-between min-vh-100">
