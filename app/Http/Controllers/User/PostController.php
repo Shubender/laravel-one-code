@@ -31,7 +31,13 @@ class PostController extends Controller
 
     public function show($post)
     {
-        return view('user.posts.show', compact('post'));
+        $fakePost = (object) [
+            'id' => 123,
+            'title' => 'Lorem ipsum dolor sit amet.',
+            'content' => 'Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipisicing elit. Iusto, laudantium?'
+        ];
+
+        return view('user.posts.show', compact('fakePost'));
     }
 
     public function edit($post)
