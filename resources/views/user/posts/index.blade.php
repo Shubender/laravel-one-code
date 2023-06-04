@@ -5,6 +5,11 @@
 @section('main.content')
     <x-title>
         {{ __('My Posts') }}
+        <x-slot name="right">
+            <x-button-link size="sm" href="{{ route('user.posts.create') }}">
+                {{ __('Create Post') }}
+            </x-button-link>
+        </x-slot>
     </x-title>
     @if($posts)
             @foreach($posts as $post)
