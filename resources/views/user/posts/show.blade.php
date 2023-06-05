@@ -5,7 +5,20 @@
 @section('main.content')
     <x-title>
         {{ __('Show Post') }}
+
+        <x-slot name="link">
+            <a href="{{ route('user.posts') }}">
+                {{ __('Back') }}
+            </a>
+        </x-slot>
+
+        <x-slot name="right">
+            <x-button-link href="{{ route('user.posts.edit', $post->id) }}">
+                {{ __('Edit') }}
+            </x-button-link>
+        </x-slot>
     </x-title>
+
     <div class="mb-3">
         <h2 class="h4">
             {{ $post->title }}
