@@ -1,6 +1,4 @@
-@props(['name' => ''])
-
-<input id="{{ $name }}" type="hidden" name="{{ $name }}">
+<input id="{{ $name }}" type="hidden" {{ $attributes }}>
 <trix-editor input="{{ $name }}"></trix-editor>
 
 @once
