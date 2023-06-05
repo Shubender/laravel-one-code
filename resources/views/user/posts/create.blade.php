@@ -13,7 +13,7 @@
         </x-slot>
     </x-title>
 
-    <x-post.form/>
+    <x-post.form action="{{ route('user.posts.store') }}"/>
 @endsection
 
 
