@@ -16,8 +16,7 @@ class RegisterController extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
         $password = $request->input('password');
-        $remember = $request->input('remember');
-
+        $agreement = $request->boolean('agreement');
 
         return 'request registration';
     }

@@ -33,7 +33,7 @@
                     <x-input type="password" name="password_confirmation" class="form-control" required/>
                 </x-form-item>
                 <x-form-item>
-                    <x-checkbox name="remember">
+                    <x-checkbox name="agreement">
                         {{ __('Я согласен на обработку персональных данных') }}
                     </x-checkbox>
                 </x-form-item>
