@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $post = (object) [
+        $post = (object)[
             'id' => 123,
             'title' => 'Lorem ipsum dolor sit amet.',
             'content' => 'Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipisicing elit. Iusto, laudantium?'
@@ -24,14 +25,17 @@ class PostController extends Controller
         return view('user.posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $title = $request->input('title');
+        $content = $request->input('content');
+
         return 'Запрос создание поста';
     }
 
     public function show($post)
     {
-        $post = (object) [
+        $post = (object)[
             'id' => 123,
             'title' => 'Lorem ipsum dolor sit amet.',
             'content' => 'Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipisicing elit. Iusto, laudantium?'
@@ -42,7 +46,7 @@ class PostController extends Controller
 
     public function edit($post)
     {
-        $post = (object) [
+        $post = (object)[
             'id' => 123,
             'title' => 'Lorem ipsum dolor sit amet.',
             'content' => 'Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipisicing elit. Iusto, laudantium?'
