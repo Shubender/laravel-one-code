@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('register.index');
     }
 
-    public function store() {
+    public function store(Request $request)
+    {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $remember = $request->input('remember');
+
+
         return 'request registration';
     }
 }
