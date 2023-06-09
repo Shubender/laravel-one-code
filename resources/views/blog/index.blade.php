@@ -6,6 +6,9 @@
     <x-title>
         {{ __('Posts') }}
     </x-title>
+
+    @include('blog.filter')
+
     @if($posts)
         <div class="row">
             @foreach($posts as $post)
