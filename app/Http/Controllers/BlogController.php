@@ -12,7 +12,7 @@ class BlogController extends Controller
         $search = $request->input('search');
         $category_id = $request->input('category_id');
 
-        $post = (object) [
+        $post = (object)[
             'id' => 123,
             'title' => 'Lorem ipsum dolor sit amet.',
             'content' => 'Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipisicing elit. Iusto, laudantium?',
@@ -22,7 +22,7 @@ class BlogController extends Controller
         $posts = array_fill(0, 10, $post);
 
         $posts = array_filter($posts, function ($post) use ($search, $category_id) {
-            if ($search && ! str_contains(strtolower($post->title), strtolower($search))) {
+            if ($search && !str_contains(strtolower($post->title), strtolower($search))) {
                 return false;
             }
 
@@ -32,12 +32,18 @@ class BlogController extends Controller
             return true;
         });
 
-        return view('blog.index', compact('posts'));
+        $categories = [
+            null => __('All categories'),
+            1 => __('First category'),
+            2 => __('Second category'),
+        ];
+
+        return view('blog.index', compact('posts', "categories"));
     }
 
     public function show()
     {
-        $post = (object) [
+        $post = (object)[
             'id' => 123,
             'title' => 'Lorem ipsum dolor sit amet.',
             'content' => 'Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipisicing elit. Iusto, laudantium?'
