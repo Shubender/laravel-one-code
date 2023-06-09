@@ -15,7 +15,8 @@ class BlogController extends Controller
         $post = (object) [
             'id' => 123,
             'title' => 'Lorem ipsum dolor sit amet.',
-            'content' => 'Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipisicing elit. Iusto, laudantium?'
+            'content' => 'Lorem ipsum <strong>dolor</strong> sit amet, consectetur adipisicing elit. Iusto, laudantium?',
+            'category_id' => 1,
         ];
 
         $posts = array_fill(0, 10, $post);
