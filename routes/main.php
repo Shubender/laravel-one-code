@@ -23,7 +23,10 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/test', TestController::class)->middleware('token');
+//Route::get('/test', TestController::class)->middleware('token');
+
+Route::get('/test', TestController::class);
+
 
 Route::view('/', 'home.index')->name('home');
 
