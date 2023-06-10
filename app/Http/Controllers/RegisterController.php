@@ -13,11 +13,11 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $agreement = $request->boolean('agreement');
+//        $name = $request->input('name');
+//        $email = $request->input('email');
+//        $password = $request->input('password');
+//        $agreement = $request->boolean('agreement');
 
-        return 'request registration';
+        return redirect()->route('user');
     }
 }
