@@ -18,6 +18,8 @@ class RegisterController extends Controller
 //        $password = $request->input('password');
 //        $agreement = $request->boolean('agreement');
 
-        return redirect()->route('user');
+        return redirect()->back()->withInput();
+
+//        return redirect()->route('user');
     }
 }
