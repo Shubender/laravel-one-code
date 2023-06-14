@@ -6,16 +6,14 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public function index() {
+    public function index(Request $request)
+    {
         return view('login.index');
     }
 
-    public function store(Request $request) {
-
-
-//        $email = $request->input('email');
-//        $password = $request->input('password');
-//        $remember = $request->boolean('remember');
+    public function store(Request $request)
+    {
+        alert(__('Welcome!'));
 
         return redirect()->route('user');
     }
