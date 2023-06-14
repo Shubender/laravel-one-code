@@ -30,6 +30,8 @@ class PostController extends Controller
         $title = $request->input('title');
         $content = $request->input('content');
 
+        alert(__('Post created'));
+
         return redirect()->route('user.posts.show', 123);
     }
 
@@ -59,6 +61,8 @@ class PostController extends Controller
     {
         $title = $request->input('title');
         $content = $request->input('content');
+
+        alert(__('Post updated'));
 
         return redirect()->back();
     }
