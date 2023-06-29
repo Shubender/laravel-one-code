@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\StorePostRequest;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -27,8 +28,27 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $title = $request->input('title');
-        $content = $request->input('content');
+//        $title = $request->input('title');
+//        $content = $request->input('content');
+
+//        $validated = $request->validated();
+
+//        $validated = $request->validate([
+//            'title' => ['required', 'string', 'max:100'],
+//            'content' => ['required', 'string', 'max:10000'],
+//        ]);
+
+//        $validated = validator($request->all(), [
+//            'title' => ['required', 'string', 'max:100'],
+//            'content' => ['required', 'string', 'max:10000'],
+//        ])->validate();
+
+        $validated = validate($request->all(), [
+            'title' => ['required', 'string', 'max:100'],
+            'content' => ['required', 'string', 'max:10000'],
+        ]);
+
+        dd($validated);
 
         alert(__('Post created'));
 
@@ -59,8 +79,13 @@ class PostController extends Controller
 
     public function update(Request $request, $post)
     {
-        $title = $request->input('title');
-        $content = $request->input('content');
+//        $title = $request->input('title');
+//        $content = $request->input('content');
+
+        $validated = validate($request->all(), [
+            'title' => ['required', 'string', 'max:100'],
+            'content' => ['required', 'string', 'max:10000'],
+        ]);
 
         alert(__('Post updated'));
 
